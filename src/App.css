@@ -1,14 +1,19 @@
 .App {
   text-align: left;
-  background-color: #363636;
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  color: white;
+
 }
 
-.App-header {
+.container {
+  height: 300px,
+  width: 100%;
+}
+
+ .App-header {
   background-color: #363636;
   display: flex;
   flex-direction: column;
@@ -26,4 +31,4 @@
 }
 .center-navbar .navbar .container {
   width: 100%;
-}
+} 

@@ -10,14 +10,19 @@ import { DiscoverIslam } from './components/DiscoverIslam';
 import { Donate } from './components/Donate';
 import { PrayerTimes } from './components/PrayerTimes';
 import { Visitors } from './components/Visitors';
+import  LocateUs  from './components/LocateUs'
+import { PictureSlide } from './components/PictureSlide'
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
         <Router>
-          <Navigation />
+
           <Layout>
+          <Navigation />
+          <PictureSlide />
+
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
@@ -26,9 +31,11 @@ class App extends Component {
               <Route path="/donate" component={Donate}/>
               <Route path="/prayertimes" component={PrayerTimes}/>
               <Route path="/visitors" component={Visitors}/>
+              <Route path="/locateus" component={LocateUs}/>
               <Route component={NoMatch} />
             </Switch>
           </Layout>
+
         </Router>
       </React.Fragment>
     );
