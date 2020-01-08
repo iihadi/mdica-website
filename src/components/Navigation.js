@@ -65,7 +65,7 @@ const Styles = styled.div`
 export const Navigation = () => (
   <Styles>
 
-    <Navbar expand="lg" fixed="bottom">
+    <Navbar expand="lg" sticky="top">
       <Navbar.Brand href="/">
       MDICA
       </Navbar.Brand>

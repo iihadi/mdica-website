@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTable } from 'react-table'
+import { useTable, usePagination } from 'react-table'
 import prayertimes from './assets/json/prayertimes.json'
 
 
@@ -72,6 +72,7 @@ function Table({ columns, data }) {
         )}
       </tbody>
     </table>
+    
   )
 }
 

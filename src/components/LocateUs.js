@@ -27,5 +27,5 @@ export class LocateUs extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyC2vH_HAFmwSIkZIddVf-Sh_4sxoTL7MaU'
+  apiKey: 'soonTM'
 })(LocateUs);
