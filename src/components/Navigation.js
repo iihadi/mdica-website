@@ -33,8 +33,6 @@ const Styles = styled.div`
 
   .navbar {
     background-color: transparent;
-    position: 'fixed';
-    bottom: offset;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
     -o-transition: all 0.6s ease-out;

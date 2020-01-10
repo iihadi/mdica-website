@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable } from 'react-table'
 import prayertimes from './assets/json/prayertimes.json'
+import moment from 'moment'
 
 
 const Styles = styled.div`
@@ -32,6 +33,9 @@ const Styles = styled.div`
     }
   }
 `
+
+const data = prayertimes
+
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -106,10 +110,14 @@ function App() {
     []
   )
 
-  const data = prayertimes
+
+
 
   return (
     <Styles>
+    <div>
+
+     </div>
       <Table columns={columns} data={data} />
     </Styles>
   )

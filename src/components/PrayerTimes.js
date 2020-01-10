@@ -1,5 +1,6 @@
 import React from 'react'
-import  Timetable  from './Timetable'
+import  Timetable   from './Timetable'
+import { Test } from './Test'
 
 export const PrayerTimes = () => (
   <div>

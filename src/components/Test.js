@@ -1,119 +1,85 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useTable, usePagination } from 'react-table'
-import prayertimes from './assets/json/prayertimes.json'
+
+import React from 'react';
+import { Carousel }from 'react-bootstrap';
+import styled from 'styled-components';
 
 
 const Styles = styled.div`
-  padding: 1rem;
 
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
+.carousel,.item,.active{
+height:100%;
+}
+  .carousel-inner{
+height:100%;
+}
 
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
+   .container {
+    height: 300px,
+    width: 100%;
   }
-`
 
-function Table({ columns, data }) {
-  // Use the state and functions returned from useTable to build your UI
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  })
+  .Select-menu-outer{top: auto; bottom: 100%}
 
-  // Render the UI for your table
-  return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map(
-          (row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                })}
-              </tr>
-            )}
-        )}
-      </tbody>
-    </table>
-    
-  )
+  .carousel {
+    height: 100vh;
+    width: fill;
+    zoom: 100%;
+    overflow:hidden;
 }
 
-function App() {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Date',
-        accessor: 'Date'
-      },
-      {
-        Header: 'Fajr',
-        accessor: 'Fajr'
-      },
-      {
-        Header: 'Duhr',
-        accessor: 'Dhur'
-      },
-      {
-        Header: 'Asr',
-        accessor: 'Asr'
-      },
-      {
-        Header: 'Maghrib',
-        accessor: 'Maghrib'
-      },
-      {
-        Header: 'Isha',
-        accessor: 'Isha'
-      },
-    ],
-    []
-  )
-
-  const data = prayertimes
-
-  return (
-    <Styles>
-      <Table columns={columns} data={data} />
-    </Styles>
-  )
+.carousel .carousel-inner {
+    height:100%;
 }
 
-export default App
+  .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    --webkit-background-size:cover;
+    background-size: cover;
+  }
+
+  `;
+
+
+export const PictureSlide = () => (
+  <Styles>
+  <Carousel>
+<Carousel.Item>
+  <img
+    className="d-block w-100"
+    src={require("./assets/img/Mosque1.jpg")}
+    alt="First slide"
+  />
+  <Carousel.Caption>
+    <h3>First slide label</h3>
+    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+  </Carousel.Caption>
+</Carousel.Item>
+<Carousel.Item>
+  <img
+    className="d-block w-100"
+    src={require("./assets/img/Mosque2.jpg")}
+    alt="Third slide"
+  />
+
+  <Carousel.Caption>
+    <h3>Second slide label</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </Carousel.Caption>
+</Carousel.Item>
+<Carousel.Item>
+  <img
+    className="d-block w-100"
+    src={require("./assets/img/Mosque3.jpg")}
+    alt="Third slide"
+  />
+
+  <Carousel.Caption>
+    <h3>Third slide label</h3>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </Carousel.Caption>
+</Carousel.Item>
+</Carousel>
+</Styles>
+)
